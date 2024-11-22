@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/servico.css">
+    <title>J E de Almeida/Serviços</title>
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="./imagens/logo.png" alt="Logo JE de Almeida">
+            </div>
+            <div class="navegacao">
+                <ul class="nav-links">
+                    <li><a href="index.html">PÁGINA INICIAL</a></li>
+                    <li><a href="produto.html">PRODUTOS</a></li>
+                    <li><a href="servicos.html">SERVIÇOS</a></li>
+                    <li><a href="orcamento.html">ORÇAMENTO</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="manutencao">
+            <div class="servico-container">
+                <a class="link-servico" href="#" onclick="mostrarFormulario('Manutenção ')">
+                    <img class="servico" src="imagens/manut-fur.png" alt="Manutenção de máquinas pneumáticas">
+                </a>
+            </div>
+            <div class="servico-container">
+                <a class="link-servico" href="#" onclick="mostrarFormulario('Manutenção ')">
+                    <img class="servico" src="imagens/manut-mart.png" alt="Manutenção de Marteletes">
+                </a>
+            </div>
+            <div class="servico-container">
+                <a class="link-servico" href="#" onclick="mostrarFormulario('Manutenção ')">
+                    <img class="servico" src="imagens/maq-cherry.png" alt="Manutenção de Máquina Cherry">
+                </a>
+            </div>
+        </div>
+        <div id="formulario" class="form-container" style="display: none;">
+          <button class="close-button" onclick="fecharFormulario()">x</button>
+          <h2>Solicitação de Manutenção</h2>
+          <form id="solicitacaoForm" autocomplete="off">
+              <input type="hidden" id="tipoServico" />
+              <label>Modelo do Equipamento:</label>
+              <input type="text" id="modeloEquipamento" placeholder="Digite o modelo" required>
+              <label>Descrição do Problema:</label>
+              <input type="text" id="descricaoProblema" placeholder="Descreva o problema" required>
+              <label>Quantidade:</label>
+              <input type="number" id="quantidadeEquipamento" min="1" value="1">
+              <button class="botao-orcamento" type="button" onclick="adicionarAoOrcamento()">Adicionar ao Orçamento</button>
+          </form>
+      </div>
+      <div id="overlay" class="overlay" style="display: none;"></div>
+      
+
+        <div id="overlay" class="overlay" style="display: none;"></div>
+    </main>
+</body>
+<script src="js/servicos.js"></script>
+</html>
