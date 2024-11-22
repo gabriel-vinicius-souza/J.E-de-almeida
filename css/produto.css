@@ -1,0 +1,469 @@
+/*HEADER*/
+
+* {
+  padding: 0; /*Zerando o espaçamento interno da pagina*/
+  margin: 0; /*Zerando a margem da pagina*/
+  box-sizing: border-box; /*Definindo que a página tem o mesmo tamanho da box*/
+}
+body {
+  margin-top: 50px;
+  font-family: "Arial", sans-serif; /* Definindo as fontes do body */
+  background-color: #fff; /* Cor de fundo da página */
+  padding-top: 5%;
+}
+header {
+  padding-top: 100px;
+}
+/* Ajuste o conteúdo principal para não ficar atrás da barra lateral */
+main {
+  display: flex; /* Alinha a barra lateral e o conteúdo em linha */
+}
+.navbar {
+  display: flex; /* Definindo a propriedade display */
+  justify-content: space-between; /* Justificando os elementos da barra de navegação */
+  padding: 10px 50px; /* Define o espaçamento interno nos itens */
+  height: 100px; /* Altura da navbar */
+  background-color: #f0f8f8; /* Cor da barra de navegação */
+  position: fixed; /* Fixa a navbar */
+  top: 0; /* Fixa no topo da pági a */
+  left: 0; /* Fixa à esquerda */
+  right: 0; /* Fixa à direita */
+  z-index: 1000; /* Garante que a navbar esteja acima de outros elementos */
+  border-bottom: 2px solid #fc1414;
+}
+
+.logo img {
+  width: 200px; /*Ajusta a largura da logo */
+  height: auto; /* Ajusta a altura da logo automaticamente */
+}
+.navegacao {
+  display: flex;
+  flex: 1;
+  justify-content: center; /* Centraliza o menu no meio da barra */
+}
+.nav-links {
+  list-style: none; /* Retira os marcadores de lista */
+  display: flex;
+  gap: 120px; /* Aumenta o espaço entre os itens de navegação para o dobro */
+  margin-top: 20px; /* Margem do topo */
+}
+.nav-links a {
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 15px; /* Ajustado para ser mais proporcional */
+  position: relative;
+}
+
+.nav-links a::after {
+  content: "";
+  display: block;
+  height: 2px; /* Espessura do sublinhado */
+  background-color: #000; /* Cor do sublinhado */
+  width: 100%; /* Largura do sublinhado */
+  position: absolute;
+  bottom: -5px; /* Ajuste para mover o sublinhado para baixo */
+  left: 0;
+  transform: scaleX(0); /* Inicialmente escondido */
+  transition: 0.3s ease; /* Animação suave ao mostrar */
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1); /* Mostrar o sublinhado ao passar o mouse */
+}
+
+
+/* Estilo para a barra de pesquisa fixa */
+.bar-pesquisa {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: auto;
+  height: 60px;
+  margin-top: 2%;
+  position: fixed;
+  top: 80px; /* Ajuste conforme a altura do seu header */
+  left: 45px;
+  width: calc(
+    100% - 460px
+  ); /* Ajuste conforme a largura do seu navbar lateral */
+  margin-left: 295px; /* Compensando a largura do navbar lateral */
+  background-color: #f0f8f8; /* Cor da barra de navegação */
+  padding: 5px;
+  z-index: 999; /* Certifique-se de que a barra esteja acima de outros elementos */
+
+}
+#barraDePesquisa {
+    height: 50px;
+    width: 70%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid red;
+    border-radius: 10px 0px 0px 10px ;
+    margin-right: 10px;
+}
+
+
+#barraDePesquisa:focus{
+  background-color: #f6f5f5;
+  border: 1px solid #c70f0f;
+  outline: none;
+}
+
+
+
+#botaoDePesquisa{
+    margin-left: -30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  height: 50px;
+  right: 0; /* Alinha o botão à direita */
+  background-color: #fc1414;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0px 10px 10px 0px; /* Para combinar com o input */
+  cursor: pointer;
+}
+
+#botaoDePesquisa:hover {
+    background-color: #c70f0f;
+}
+
+
+
+/* Navegação lateral */
+.navlateral {
+  background-color: #fff; /* Fundo da sidebar */
+  margin-top: 1%;
+  margin-left: 30px;
+  color: #333; /* Cor do texto */
+  padding: 15px; /* Reduzido para aproximar do cabeçalho */
+  width: 250px; /* Defina uma largura fixa para a sidebar */
+  height: calc(
+    73vh - 100px
+  ); /* Altura total da janela menos a altura do navbar */
+  position: absolute; /* Fixa a sidebar à esquerda */
+  top: 100px; /* Posiciona logo abaixo do navbar */
+  left: 0; /* Posiciona à esquerda da página */
+  overflow-y: auto; /* Adiciona rolagem caso o conteúdo exceda a altura */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #d5d3d3;
+}
+
+
+
+.navlateral .categorianavlateral {
+  font-size: 20px;
+  font-family: "Gill S5ans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin-left: 0px;
+  margin-right: 0px;
+  color: #fff;
+  padding: 10px;
+  background-color: #ff4d4d;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  width: 150;
+  align-items: center;
+}
+
+.navlateral a {
+  display: block; /* Permite que as caixas sejam tratadas como blocos */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: #000000; /* Cor do texto */
+  text-decoration: none; /* Remove sublinhado */    
+  padding: 12px 5px; /* Ajuste para aumentar a área clicável */
+  border: 2px solid transparent; /* Borda transparente por padrão */
+  margin-top: -15px; /* Espaço entre as caixas */
+  margin-bottom: 0px;
+  position: relative; /* Para posicionar o pseudo-elemento */
+  background-color: #fff; /* Fundo da caixa */
+  transition: color 0.1s ease, transform 0.3s ease, font-weight 0.3s ease; /* Transição suave para cor, escala e peso da fonte */
+}
+
+.navlateral a:hover {
+  color: #ff4d4d; /* Cor do texto vermelha ao passar o mouse */
+  font-weight: bold; /* Torna o texto em negrito ao passar o mouse */
+  transform: scale(1.05); /* Aumenta levemente a escala da caixa */
+}
+
+/*PRODUTOS*/
+
+/* Adicionando a animação fade-in */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px); /* Move um pouco para baixo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Posição normal */
+  }
+}
+
+/* Aplicando a animação aos cartões de produto */
+.product-card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  padding: 20px;
+  width: 250px;
+  text-align: center;
+  opacity: 0; /* Começa invisível */
+  animation: fadeIn 0.8s ease forwards; /* Aplicando a animação */
+}
+
+/* Garantir que todos os cartões de produto apareçam suavemente */
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+  margin-top: -50px;
+  margin-left: 220px;
+  width: calc(100% - 220px);
+  box-sizing: border-box;
+  opacity: 1;
+}
+.product-card:hover {
+  opacity: 1; /* Aumenta a opacidade ao passar o mouse */
+  background-color: #f7f5f5;
+}
+
+/*IMAGEM DOS PRODUTOS*/
+
+.product-card img {
+  max-width: 200px;
+  height: 200px;
+}
+
+/*DESCRIÇÃO DOS PRODUTOS*/
+.product-card h2 {
+  font-size: 18px;
+  color: #333;
+}
+
+/* "VENDA UNITARIA" */
+.product-card p {
+  font-size: 14px;
+  color: #cecaca;
+}
+/* Remover as setas de incremento e decremento para navegadores WebKit (Chrome, Safari, Edge) */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Contêiner Flexbox para o input e o botão */
+.product-card .quantidade-e-adicionar {
+  display: flex;
+  align-items: center; /* Alinha os itens verticalmente no centro */
+  gap: 10px; /* Espaçamento entre o input e o botão */
+  margin-top: 10px; /* Espaçamento acima */
+}
+
+.product-card fieldset {
+  border: 1px solid #666; /* Define a borda ao redor do input */
+  border-radius: 6px; /* Arredondar bordas */
+  padding: 5px; /* Espaço interno */
+  width: 60px; /* Ajuste conforme necessário */
+  margin: 0; /* Remove margem padrão */
+}
+
+.product-card .quantidadedeprodutos {
+  font-size: 12px; /* Tamanho da fonte do input */
+  width: 50px; /* Largura do input */
+  height: 20px; /* Altura do input */
+  border: none; /* Remove a borda do próprio input */
+  outline: none; /* Remove o contorno padrão */
+  text-align: center; /* Centraliza o texto dentro do input */
+}
+
+.aumenta-e-diminui img {
+  height: 10px;
+  width: 10px;
+}
+
+.botaoadicionar {
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  height: 40px;
+  margin-top: 10px;
+  margin-left: 10px; /* Espaçamento entre o input e o botão */
+}
+
+.botaoadicionar:hover {
+  background-color: #d1aa0c;
+}
+
+
+/* Estilo geral do footer */
+footer {
+  background-color: #ec1c1c; /* Cor de fundo escura */
+  color: #fff; /* Texto em branco */
+  padding: 20px 0; /* Espaçamento interno */
+  font-family: Arial, sans-serif; /* Fonte padrão */
+  }
+  
+  /* Container principal do footer */
+  #localizacao {
+  max-width: 900px; /* Largura máxima do footer */
+  padding: 0 20px; /* Espaçamento lateral */
+  
+  }
+  
+  /* Estilo do container de localização */
+  .container-localizacao {
+  margin-left: 100px;
+  display: flex; /* Exibe em linha */
+  justify-content: space-between; /* Espaça os itens uniformemente */
+  align-items: flex-start; /* Alinha os itens ao topo */
+  }
+  /* Novo estilo para o contêiner de colunas */
+  .container-colunas {
+  
+  display: flex; /* Usando flexbox para dispor as colunas */
+  justify-content: space-between; /* Espaça as colunas uniformemente */
+  margin-top: 20px; /* Margem superior para separar do mapa */
+  }
+  
+  .container-colunas  .contatofooter{
+    margin-left: 150px;
+  }
+  
+  
+  .container-colunas .navfooter{
+  
+    margin-left: 150px;
+  }
+  
+  .container-colunas .titulo{
+    
+    font-size: 30px;
+  }
+  
+  .container-colunas ul li {
+    text-decoration: none;
+  }
+  
+  /* Estilo das colunas */
+  
+  .titulo{
+    color: #fff;
+  }
+
+  .contatofooter,
+  .navfooter {
+  flex: 1; /* Cada coluna ocupa espaço igual */
+  margin-right: 20px; /* Margem à direita da coluna "Fale Conosco" */
+  }
+  
+  .navfooter {
+    flex: 1; /* Cada coluna ocupa espaço igual */
+    margin-right: 20px; /* Margem à direita da coluna "Fale Conosco" */
+  }
+  
+  /* Remove a margem da última coluna */
+  .navfooter {
+    margin-right: 0; /* Remove margem direita da última coluna */
+    display: inline-block;
+  }
+  
+  .navfooter .link-footer {
+    list-style: none;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  
+  .navfooter .link-footer a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+  }
+  
+  
+  
+  .navfooter .link-footer a::after {
+    content: "";
+    display: block;
+    height: 2px; /* Espessura do sublinhado */
+    background-color: #fff; /* Cor do sublinhado */
+    width: 100%; /* Largura do sublinhado */
+    position: absolute;
+    bottom: -5px; /* Ajuste para mover o sublinhado para baixo */
+    left: 0;
+    transform: scaleX(0); /* Inicialmente escondido */
+    transition: transform 0.3s ease; /* Animação suave ao mostrar */
+  }
+  
+  .navfooter .link-footer a:hover::after {
+    transform: scaleX(1); /* Mostrar o sublinhado ao passar o mouse */
+  }
+  /* Estilo para a seção de contato */
+  .contatofooter {
+    flex: 1; /* Ocupa o espaço restante */
+  }
+    
+    /* Estilo do título de contato */
+  .contatofooter h2 {
+    margin-bottom: 10px; /* Margem inferior */
+    font-size: 1.5em; /* Tamanho da fonte */
+  }
+    
+    /* Estilo da lista de contatos */
+  .contatofooter ul {
+    list-style: none; /* Remove a lista padrão */
+    padding: 0; /* Remove o preenchimento */
+  }
+    
+  .conteudo-rodape a svg {
+    width: 30px; /* Aumenta o tamanho dos ícones */
+    height: 30px; /* Aumenta o tamanho dos ícones */
+    margin: 8px;
+    fill: #fff; /* Define a cor dos ícones como branca */
+    transition: transform 0.2s ease; /* Adiciona uma animação suave para o hover */
+  }
+  
+  /* Efeito hover para aumentar os ícones ao passar o mouse */
+  .conteudo-rodape a:hover svg {
+    transform: scale(1.2); /* Aumenta os ícones em 20% ao passar o mouse */
+  }
+  
+  
+  /* Estilo do mapa */
+  .mapa-localizacao {
+  border: 10px solid #fff;
+  border-radius: 30px;
+  flex: 1; /* Ocupa o espaço restante */
+  margin-right: 20px; /* Margem à direita */
+  }
+  
+  footer .copyright {
+    color: #fff;
+    margin: 0; /* Remove margens extras para garantir que o texto fique centralizado */
+    text-align: center;
+    padding-top: 2%;
+  }
+  
+  #logoBranca{
+    margin-top: 2%;
+   
+  }
+  
+  #logoBranca {
+    transition: transform 0.2s ease; /* Adiciona uma animação suave para o hover */
+  }
+  
+  /* Efeito hover para aumentar os ícones ao passar o mouse */
+  #logoBranca:hover {
+    transform: scale(1.1); /* Aumenta os ícones em 20% ao passar o mouse */
+  }

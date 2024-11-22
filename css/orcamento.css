@@ -1,0 +1,308 @@
+* {
+    padding: 0; /*Zerando o espaçamento interno da pagina*/
+    margin: 0; /*Zerando a margem da pagina*/
+    box-sizing: border-box; /*Definindo que a página tem o mesmo tamanho da box*/
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Definindo as fontes do body */
+    background-color: #fffb; /* Cor de fundo da página */
+}
+
+.navbar {
+    display: flex; /*definindo a propiedade display*/
+    justify-content: space-between; /*Justificando os elementos da barra de navegação*/
+    padding: 10px 50px; /*Define o espaçamento interno nos itens*/
+    height: 100px;
+    background-color: #f0f8f8; /*Cor da barra de navegação */
+    border-bottom: 2px solid #fc1414;
+}
+
+.logo img {
+    width: 200px; /*Ajusta a largura da logo */
+    height: auto; /* Ajusta a altura da logo automaticamente */
+}
+
+.navegacao {
+    display: flex;
+    flex: 1;
+    justify-content: center; /* Centraliza o menu no meio da barra */
+}
+
+.nav-links {
+    list-style: none; /* Retira os marcadores de lista */
+    display: flex;
+    gap: 120px; /* Aumenta o espaço entre os itens de navegação para o dobro */
+    margin-top: 20px; /* Margem do topo */
+    
+}
+
+.nav-links a {
+    text-decoration: none; 
+    text-align: center;
+    color: #000;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 15px; /* Ajustado para ser mais proporcional */
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    display: block;
+    height: 2px; /* Espessura do sublinhado */
+    background-color: #000; /* Cor do sublinhado */
+    width: 100%; /* Largura do sublinhado */
+    position: absolute;
+    bottom: -5px; /* Ajuste para mover o sublinhado para baixo */
+    left: 0;
+    transform: scaleX(0); /* Inicialmente escondido */
+    transition: transform 0.3s ease; /* Animação suave ao mostrar */
+}
+
+.nav-links a:hover::after {
+    transform: scaleX(1); /* Mostrar o sublinhado ao passar o mouse */
+}
+
+
+
+ 
+main {
+
+    padding: 40px;
+    max-width: 800px;
+    margin: auto;
+    margin-bottom: 340px;
+}
+ 
+h2 {
+    color: #c8102e; /* Vermelho */
+    text-align: center;
+}
+ 
+.form-container {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+ 
+label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #333; /* Cinza escuro */
+}
+ 
+input[type="text"],
+input[type="number"],
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+ 
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #c8102e; /* Vermelho */
+    outline: none;
+}
+ 
+button {
+    background-color: #333; /* Vermelho */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+ 
+
+ 
+.item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+ 
+.item select,
+.item input {
+    margin-right: 10px;
+}
+
+#remover:hover {
+  background-color: #c8102e;
+}
+
+
+#solicitar:hover{
+  background-color: #28a745;
+}
+
+/* Estilo geral do footer */
+footer {
+    background-color: #ec1c1c; /* Cor de fundo escura */
+    color: #fff; /* Texto em branco */
+    padding: 20px 0; /* Espaçamento interno */
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    }
+    
+    /* Container principal do footer */
+    #localizacao {
+    max-width: 900px; /* Largura máxima do footer */
+    padding: 0 20px; /* Espaçamento lateral */
+    
+    }
+    
+    /* Estilo do container de localização */
+    .container-localizacao {
+    margin-left: 100px;
+    display: flex; /* Exibe em linha */
+    justify-content: space-between; /* Espaça os itens uniformemente */
+    align-items: flex-start; /* Alinha os itens ao topo */
+    }
+    /* Novo estilo para o contêiner de colunas */
+    .container-colunas {
+    
+    display: flex; /* Usando flexbox para dispor as colunas */
+    justify-content: space-between; /* Espaça as colunas uniformemente */
+    margin-top: 20px; /* Margem superior para separar do mapa */
+    }
+    
+    .container-colunas  .contatofooter{
+      margin-left: 150px;
+    }
+    
+    
+    .container-colunas .navfooter{
+    
+      margin-left: 150px;
+    }
+    
+    .container-colunas .titulo{
+      
+      font-size: 30px;
+    }
+    
+    .container-colunas ul li {
+      text-decoration: none;
+    }
+    
+    /* Estilo das colunas */
+    
+    .titulo{
+        color: #fff;
+      }
+      
+    .contatofooter,
+    .navfooter {
+    flex: 1; /* Cada coluna ocupa espaço igual */
+    margin-right: 20px; /* Margem à direita da coluna "Fale Conosco" */
+    }
+    
+    .navfooter {
+      flex: 1; /* Cada coluna ocupa espaço igual */
+      margin-right: 20px; /* Margem à direita da coluna "Fale Conosco" */
+    }
+    
+    /* Remove a margem da última coluna */
+    .navfooter {
+      margin-right: 0; /* Remove margem direita da última coluna */
+      display: inline-block;
+    }
+    
+    .navfooter .link-footer {
+      list-style: none;
+      font-size: 15px;
+      margin-top: 20px;
+    }
+    
+    .navfooter .link-footer a {
+      text-decoration: none;
+      color: #fff;
+      position: relative;
+    }
+    
+    
+    
+    .navfooter .link-footer a::after {
+      content: "";
+      display: block;
+      height: 2px; /* Espessura do sublinhado */
+      background-color: #fff; /* Cor do sublinhado */
+      width: 100%; /* Largura do sublinhado */
+      position: absolute;
+      bottom: -5px; /* Ajuste para mover o sublinhado para baixo */
+      left: 0;
+      transform: scaleX(0); /* Inicialmente escondido */
+      transition: transform 0.3s ease; /* Animação suave ao mostrar */
+    }
+    
+    .navfooter .link-footer a:hover::after {
+      transform: scaleX(1); /* Mostrar o sublinhado ao passar o mouse */
+    }
+    /* Estilo para a seção de contato */
+    .contatofooter {
+      flex: 1; /* Ocupa o espaço restante */
+    }
+      
+      /* Estilo do título de contato */
+    .contatofooter h2 {
+      margin-bottom: 10px; /* Margem inferior */
+      font-size: 1.5em; /* Tamanho da fonte */
+    }
+      
+      /* Estilo da lista de contatos */
+    .contatofooter ul {
+      list-style: none; /* Remove a lista padrão */
+      padding: 0; /* Remove o preenchimento */
+    }
+      
+    .conteudo-rodape a svg {
+      width: 30px; /* Aumenta o tamanho dos ícones */
+      height: 30px; /* Aumenta o tamanho dos ícones */
+      margin: 8px;
+      fill: #fff; /* Define a cor dos ícones como branca */
+      transition: transform 0.2s ease; /* Adiciona uma animação suave para o hover */
+    }
+    
+    /* Efeito hover para aumentar os ícones ao passar o mouse */
+    .conteudo-rodape a:hover svg {
+      transform: scale(1.2); /* Aumenta os ícones em 20% ao passar o mouse */
+    }
+    
+    
+    /* Estilo do mapa */
+    .mapa-localizacao {
+    border: 10px solid #fff;
+    border-radius: 30px;
+    flex: 1; /* Ocupa o espaço restante */
+    margin-right: 20px; /* Margem à direita */
+    }
+    
+    footer .copyright {
+      color: #fff;
+      margin: 0; /* Remove margens extras para garantir que o texto fique centralizado */
+      text-align: center;
+      padding-top: 2%;
+    }
+    
+    #logoBranca{
+      margin-top: 2%;
+     
+    }
+    
+    #logoBranca {
+      transition: transform 0.2s ease; /* Adiciona uma animação suave para o hover */
+    }
+    
+    /* Efeito hover para aumentar os ícones ao passar o mouse */
+    #logoBranca:hover {
+      transform: scale(1.1); /* Aumenta os ícones em 20% ao passar o mouse */
+    }

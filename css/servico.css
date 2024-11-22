@@ -1,0 +1,338 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif; /* Definindo as fontes do site */
+  background-color: #fff; /* Cor de fundo da página */
+}
+
+.navbar {
+  height: 100px;
+  display: flex;
+  justify-content: space-between; /* Logo à esquerda e ícone à direita */
+  padding: 10px 50px; /* Define o espaçamento interno nos itens */
+  background-color: #f0f8f8; /* Cor da barra de navegação */
+  border-bottom: 2px solid #fc1414;
+}
+
+.logo img {
+  width: 200px; /* Ajuste a largura da logo */
+  height: auto; /* Ajusta a altura da logo automaticamente */
+}
+
+.navegacao {
+  display: flex;
+  flex: 1;
+  justify-content: center; /* Centraliza o menu no meio da barra */
+}
+
+.nav-links {
+  list-style: none; /* Retira os marcadores de lista */
+  display: flex;
+  gap: 120px; /* Aumenta o espaço entre os itens de navegação */
+  margin-top: 20px; /* Margem do topo */
+}
+
+.nav-links a {
+  text-decoration: none;
+  text-align: center;
+  color: #000;
+  font-size: 22px;
+  font-weight: bold;
+  padding: 10px 0; /* Ajustado para ser mais proporcional */
+  position: relative; /* Necessário para o efeito de sublinhado */
+}
+
+.nav-links a::after {
+  content: "";
+  display: block;
+  height: 2px; /* Espessura do sublinhado */
+  background-color: #000; /* Cor do sublinhado */
+  width: 100%; /* Largura do sublinhado */
+  position: absolute;
+  bottom: -5px; /* Ajuste para mover o sublinhado para baixo */
+  left: 0;
+  transform: scaleX(0); /* Inicialmente escondido */
+  transition: transform 0.3s ease; /* Animação suave ao mostrar */
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1); /* Mostrar o sublinhado ao passar o mouse */
+}
+
+/* Main */
+.manutencao {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* Espaço entre as imagens */
+  padding: 50px 0;
+}
+
+.servico-container {
+  box-shadow: 4px 12px 12px rgba(0, 0, 0, 0.1);
+
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  width: 400px; /* Largura padrão do contêiner */
+  height: 550px; /* Altura padrão do contêiner */
+  overflow: hidden; /* Evita que a imagem saia dos limites do contêiner */
+  opacity: 0.8; /* Define a opacidade inicial */
+}
+
+.servico-container img {
+  width: 100%; /* A imagem ocupa toda a largura do contêiner */
+  height: 100%; /* A imagem ocupa toda a altura do contêiner */
+  object-fit: cover; /* Garante que a imagem se ajuste sem distorção */
+  transition: transform 0.3s ease; /* Transição suave ao aplicar zoom */
+}
+
+.servico-container:hover {
+  opacity: 1; /* Aumenta a opacidade ao passar o mouse */
+}
+
+.servico-container:hover img {
+  transform: scale(1.05); /* Aplica um leve zoom na imagem ao passar o mouse */
+}
+
+/* Estilos para o formulário */
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  margin: auto; /* Para centralizar horizontalmente */
+  display: none; /* Mantém o formulário oculto inicialmente */
+  position: fixed; /* Fixa o formulário na tela */
+  top: 50%; /* Move para o meio da tela */
+  left: 50%; /* Move para o meio da tela */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Ajusta a posição para centralizar completamente */
+  z-index: 1000; /* Garante que o formulário fique acima de outros elementos */
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #d00000;
+}
+
+.form-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-container input,
+.form-container textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-container input[type="number"] {
+  width: 100px;
+}
+
+.botao-orcamento {
+  background-color: #d00000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.botao-orcamento:hover {
+  background-color: #a00000;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro com opacidade */
+  z-index: 999; /* Abaixo do formulário, mas acima de outros elementos */
+}
+
+.close-button {
+  background-color: transparent; /* Fundo transparente */
+  border: none; /* Sem borda */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  font-size: 20px; /* Aumente o tamanho da fonte do "X" */
+  color: #000000; /* Cor do "X" */
+  position: absolute; /* Posiciona em relação ao contêiner */
+  top: 2px; /* Distância do topo do formulário */
+  right: 10px; /* Distância da direita do formulário */
+}
+/* Estilo geral do footer */
+footer {
+  background-color: #ec1c1c; /* Cor de fundo escura */
+  color: #fff; /* Texto em branco */
+  padding: 20px 0; /* Espaçamento interno */
+  font-family: Arial, sans-serif; /* Fonte padrão */
+  }
+  
+  /* Container principal do footer */
+  #localizacao {
+  max-width: 900px; /* Largura máxima do footer */
+  padding: 0 20px; /* Espaçamento lateral */
+  
+  }
+  
+  /* Estilo do container de localização */
+  .container-localizacao {
+  margin-left: 100px;
+  display: flex; /* Exibe em linha */
+  justify-content: space-between; /* Espaça os itens uniformemente */
+  align-items: flex-start; /* Alinha os itens ao topo */
+  }
+  /* Novo estilo para o contêiner de colunas */
+  .container-colunas {
+  
+  display: flex; /* Usando flexbox para dispor as colunas */
+  justify-content: space-between; /* Espaça as colunas uniformemente */
+  margin-top: 20px; /* Margem superior para separar do mapa */
+  }
+  
+  .container-colunas  .contatofooter{
+    margin-left: 150px;
+  }
+  
+  
+  .container-colunas .navfooter{
+  
+    margin-left: 150px;
+  }
+  
+  .container-colunas .titulo{
+    
+    font-size: 30px;
+  }
+  
+  .container-colunas ul li {
+    text-decoration: none;
+  }
+  
+  /* Estilo das colunas */
+
+  .titulo{
+    color: #fff;
+  }
+  
+  .contatofooter,
+  .navfooter {
+  flex: 1; /* Cada coluna ocupa espaço igual */
+  margin-right: 20px; /* Margem à direita da coluna "Fale Conosco" */
+  }
+  
+  .navfooter {
+    flex: 1; /* Cada coluna ocupa espaço igual */
+    margin-right: 20px; /* Margem à direita da coluna "Fale Conosco" */
+  }
+  
+  /* Remove a margem da última coluna */
+  .navfooter {
+    margin-right: 0; /* Remove margem direita da última coluna */
+    display: inline-block;
+  }
+  
+  .navfooter .link-footer {
+    list-style: none;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+  
+  .navfooter .link-footer a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+  }
+  
+  
+  
+  .navfooter .link-footer a::after {
+    content: "";
+    display: block;
+    height: 2px; /* Espessura do sublinhado */
+    background-color: #fff; /* Cor do sublinhado */
+    width: 100%; /* Largura do sublinhado */
+    position: absolute;
+    bottom: -5px; /* Ajuste para mover o sublinhado para baixo */
+    left: 0;
+    transform: scaleX(0); /* Inicialmente escondido */
+    transition: transform 0.3s ease; /* Animação suave ao mostrar */
+  }
+  
+  .navfooter .link-footer a:hover::after {
+    transform: scaleX(1); /* Mostrar o sublinhado ao passar o mouse */
+  }
+  /* Estilo para a seção de contato */
+  .contatofooter {
+    flex: 1; /* Ocupa o espaço restante */
+  }
+    
+    /* Estilo do título de contato */
+  .contatofooter h2 {
+    margin-bottom: 10px; /* Margem inferior */
+    font-size: 1.5em; /* Tamanho da fonte */
+  }
+    
+    /* Estilo da lista de contatos */
+  .contatofooter ul {
+    list-style: none; /* Remove a lista padrão */
+    padding: 0; /* Remove o preenchimento */
+  }
+    
+  .conteudo-rodape a svg {
+    width: 30px; /* Aumenta o tamanho dos ícones */
+    height: 30px; /* Aumenta o tamanho dos ícones */
+    margin: 8px;
+    fill: #fff; /* Define a cor dos ícones como branca */
+    transition: transform 0.2s ease; /* Adiciona uma animação suave para o hover */
+  }
+  
+  /* Efeito hover para aumentar os ícones ao passar o mouse */
+  .conteudo-rodape a:hover svg {
+    transform: scale(1.2); /* Aumenta os ícones em 20% ao passar o mouse */
+  }
+  
+  
+  /* Estilo do mapa */
+  .mapa-localizacao {
+  border: 10px solid #fff;
+  border-radius: 30px;
+  flex: 1; /* Ocupa o espaço restante */
+  margin-right: 20px; /* Margem à direita */
+  }
+  
+  footer .copyright {
+    color: #fff;
+    margin: 0; /* Remove margens extras para garantir que o texto fique centralizado */
+    text-align: center;
+    padding-top: 2%;
+  }
+  
+  #logoBranca{
+    margin-top: 2%;
+   
+  }
+  
+  #logoBranca {
+    transition: transform 0.2s ease; /* Adiciona uma animação suave para o hover */
+  }
+  
+  /* Efeito hover para aumentar os ícones ao passar o mouse */
+  #logoBranca:hover {
+    transform: scale(1.1); /* Aumenta os ícones em 20% ao passar o mouse */
+  }
